@@ -12,13 +12,18 @@ const Header = () => {
     setIsClient(true);
   }, []);
 
-  useVerticalScrollEvent((evt: any) => {
+  // Fix type for evt parameter and handle null checks for stickyRef
+  useVerticalScrollEvent((evt: Event) => {
     if (!isClient || !stickyRef.current) return;
 
-    if (evt.currentTarget.scrollY >= 172) {
-      stickyRef.current.classList.add("navbar_fixed");
-    } else if (evt.currentTarget.scrollY <= 42) {
-      stickyRef.current.classList.remove("navbar_fixed");
+    const scrollTarget = evt.currentTarget as Window | Element;
+    if (scrollTarget && 'scrollY' in scrollTarget) {
+      const scrollY = scrollTarget.scrollY;
+      if (scrollY >= 172) {
+        stickyRef.current.classList.add("navbar_fixed");
+      } else if (scrollY <= 42) {
+        stickyRef.current.classList.remove("navbar_fixed");
+      }
     }
   });
 

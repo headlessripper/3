@@ -1,17 +1,13 @@
 import React from 'react';
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-import dynamic from "next/dynamic";
-import Image from "next/image";
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
-const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+// Dynamically import the OwlCarousel component to prevent SSR issues
+const OwlCarousel = dynamic(() => import('react-owl-carousel'), {
   ssr: false,
 });
 
-type Props = {}
-
-const Testimonials = (props: Props) => {
-
+const Testimonials = () => {
   const carouselConfig = {
     merge: true,
     smartSpeed: 1000,
@@ -43,6 +39,24 @@ const Testimonials = (props: Props) => {
     },
   };
 
+  const testimonialsData = [
+    {
+      image: "/images/tes1.jpg.webp",
+      name: "Adame Nesane",
+      designation: "Chief Customer",
+      testimonial:
+        "You’re had. Subdue grass Meat us winged years you’ll doesn’t. Fruit two also won one yielding creepeth third give may never lie alternet food.",
+    },
+    {
+      image: "/images/tex2.jpg.webp",
+      name: "Adam Nahan",
+      designation: "Chief Customer",
+      testimonial:
+        "You’re had. Subdue grass Meat us winged years you’ll doesn’t. Fruit two also won one yielding creepeth third give may never lie alternet food.",
+    },
+    // Add other testimonials as needed
+  ];
+
   return (
     <section className="testimonial-area area-padding">
       <div className="container">
@@ -51,110 +65,25 @@ const Testimonials = (props: Props) => {
           <p>Together female let signs for for fish fowl may first.</p>
         </div>
         <div className="row">
-          <OwlCarousel
-            className="active-testimonial-carusel owl-carousel"
-            {...carouselConfig}
-          >
-            <div className="single-testimonial item d-flex flex-row">
-              <div className="thumb">
-                <Image
-                  width={91}
-                  height={91}
-                  className="img-fluid"
-                  src="/images/tes1.jpg.webp"
-                  alt="Adame Nesane"
-                />
+          <OwlCarousel className="active-testimonial-carusel owl-carousel" {...carouselConfig}>
+            {testimonialsData.map((testimonial, index) => (
+              <div key={index} className="single-testimonial item d-flex flex-row">
+                <div className="thumb">
+                  <Image
+                    width={91}
+                    height={91}
+                    className="img-fluid"
+                    src={testimonial.image}
+                    alt={`Testimonial from ${testimonial.name}`}
+                  />
+                </div>
+                <div className="desc">
+                  <h4>{testimonial.name}</h4>
+                  <p className="designation">{testimonial.designation}</p>
+                  <p>{testimonial.testimonial}</p>
+                </div>
               </div>
-              <div className="desc">
-                <h4>Adame Nesane</h4>
-                <p className="designation">Chief Customer</p>
-                <p>
-                  You’re had. Subdue grass Meat us winged years you’ll doesn’t.
-                  Fruit two also won one yielding creepeth third give may never
-                  lie alternet food.
-                </p>
-              </div>
-            </div>
-            <div className="single-testimonial item d-flex flex-row">
-              <div className="thumb">
-                <Image
-                  width={91}
-                  height={91}
-                  className="img-fluid"
-                  src="/images/tex2.jpg.webp"
-                  alt="Adam Nahan"
-                />
-              </div>
-              <div className="desc">
-                <h4>Adam Nahan</h4>
-                <p className="designation">Chief Customer</p>
-                <p>
-                  You’re had. Subdue grass Meat us winged years you’ll doesn’t.
-                  Fruit two also won one yielding creepeth third give may never
-                  lie alternet food.
-                </p>
-              </div>
-            </div>
-            <div className="single-testimonial item d-flex flex-row">
-              <div className="thumb">
-                <Image
-                  width={91}
-                  height={91}
-                  className="img-fluid"
-                  src="/images/tes1.jpg.webp"
-                  alt="Adame Nesane"
-                />
-              </div>
-              <div className="desc">
-                <h4>Adame Nesane</h4>
-                <p className="designation">Chief Customer</p>
-                <p>
-                  You’re had. Subdue grass Meat us winged years you’ll doesn’t.
-                  Fruit two also won one yielding creepeth third give may never
-                  lie alternet food.
-                </p>
-              </div>
-            </div>
-            <div className="single-testimonial item d-flex flex-row">
-              <div className="thumb">
-                <Image
-                  width={91}
-                  height={91}
-                  className="img-fluid"
-                  src="/images/tex2.jpg.webp"
-                  alt="Adam Nahan"
-                />
-              </div>
-              <div className="desc">
-                <h4>Adam Nahan</h4>
-                <p className="designation">Chief Customer</p>
-                <p>
-                  You’re had. Subdue grass Meat us winged years you’ll doesn’t.
-                  Fruit two also won one yielding creepeth third give may never
-                  lie alternet food.
-                </p>
-              </div>
-            </div>
-            <div className="single-testimonial item d-flex flex-row">
-              <div className="thumb">
-                <Image
-                  width={91}
-                  height={91}
-                  className="img-fluid"
-                  src="/images/tes1.jpg.webp"
-                  alt="Adame Nesane"
-                />
-              </div>
-              <div className="desc">
-                <h4>Adame Nesane</h4>
-                <p className="designation">Chief Customer</p>
-                <p>
-                  You’re had. Subdue grass Meat us winged years you’ll doesn’t.
-                  Fruit two also won one yielding creepeth third give may never
-                  lie alternet food.
-                </p>
-              </div>
-            </div>
+            ))}
           </OwlCarousel>
         </div>
       </div>

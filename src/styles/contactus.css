@@ -1,0 +1,18 @@
+/* External styles for iframe */
+.google-map {
+    border: 0;
+  }
+  
+  /* Adjust the form button */
+  .button-contactForm {
+    background-color: #28a745; /* Example color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .button-contactForm:hover {
+    background-color: #218838; /* Example hover effect */
+  }
+  

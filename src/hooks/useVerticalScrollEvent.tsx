@@ -1,10 +1,17 @@
 import { useEffect } from "react";
 
-const useVerticalScrollEvent = (callback: any) => {
+const useVerticalScrollEvent = (callback: (evt: Event) => void) => {
   useEffect(() => {
-    window.addEventListener("scroll", callback);
+    // Adding event listener for scroll event
+    const handleScroll = (evt: Event) => {
+      callback(evt);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup on component unmount
     return () => {
-      window.removeEventListener("scroll", callback);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [callback]);
 };

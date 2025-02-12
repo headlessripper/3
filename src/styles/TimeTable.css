@@ -1,0 +1,50 @@
+/* General styling for the timetable day cards */
+.monday, .tuesday, .wednesday, .thursday, .saturday, .sunday {
+    width: 555px;
+    height: 391px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* Specific background colors for each day */
+  .monday {
+    background-color: #44c21d;
+  }
+  
+  .tuesday {
+    background-color: #155900;
+  }
+  
+  .wednesday {
+    background-color: #155900;
+  }
+  
+  .thursday {
+    background-color: #44c21d;
+  }
+  
+  .saturday {
+    background-color: #44c21d;
+  }
+  
+  .sunday {
+    background-color: #155900;
+  }
+  
+  /* Add any other styling as needed for the timetable */
+  .portfolio_area .short_info p {
+    font-weight: bold;
+  }
+  
+  .portfolio_area .short_info h4 a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .portfolio_area .short_info h4 a:hover {
+    color: #44c21d;
+  }
+  

@@ -1,4 +1,5 @@
 import { withIronSession } from 'next-iron-session';
+import { NextApiHandler } from 'next';
 
 const sessionOptions = {
   password: process.env.SESSION_SECRET ?? 'default_secure_password', // Fallback to a default string if undefined
@@ -8,10 +9,10 @@ const sessionOptions = {
   },
 };
 
-export function withSession(handler: any) {
+export function withSession(handler: NextApiHandler) {
   return withIronSession(handler, sessionOptions);
 }
 
-export function withSessionSsr(handler: any) {
+export function withSessionSsr(handler: NextApiHandler) {
   return withIronSession(handler, sessionOptions);
 }
