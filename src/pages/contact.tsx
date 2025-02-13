@@ -15,11 +15,8 @@ export default function ContactPage() {
         <link rel="icon" href="/bobaas.ico" />
       </Head>
       <Header />
-
       <PageHeader title="Contact Us" navTitle="Contact Us" />
-      
       <ContactUs />
-      
       <Footer />
   </>
 }

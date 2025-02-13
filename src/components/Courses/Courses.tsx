@@ -52,10 +52,6 @@ const Courses: React.FC = () => {
   return (
     <section className="service-area area-padding flex justify-center items-center text-center">
       <div className="container">
-        <div className="area-heading">
-          <h3 className="line">Courses</h3>
-          <h4>Our premium courses ensure excellence and lasting results.</h4>
-        </div>
         <div className="flex flex-wrap justify-center gap-8">
           {Object.keys(gradeUrls).map((grade, index) => (
             <div
@@ -67,7 +63,7 @@ const Courses: React.FC = () => {
                 <Image
                   width={92}
                   height={92}
-                  src={`/images/i${index + 1}.png.webp`}
+                  src={`/images/grade${index + 1}.png.webp`}
                   alt={grade}
                 />
               </div>

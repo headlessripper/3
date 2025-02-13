@@ -30,7 +30,7 @@ const MainMenu: FC<Props> = () => {
             <ul className="nav navbar-nav menu_nav ml-auto">
               <li className="nav-item active">
                 <Link href="/" passHref>
-                  Home
+                  HOME
                 </Link>
               </li>
               <li className="nav-item">
@@ -50,27 +50,16 @@ const MainMenu: FC<Props> = () => {
               </li>
 
               {/* Blog Dropdown */}
-              <li className="nav-item submenu dropdown">
-                <Link href="#" passHref>
-                  Blog
+              <li className="nav-item">
+                <Link href="/blog" passHref>
+                  BLOG
                 </Link>
-                <ul className="dropdown-menu">
-                  <li className="nav-item">
-                    <Link href="/blog" passHref>
-                      Blog
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link href="/single-blog" passHref>
-                      Blog Details
-                    </Link>
-                  </li>
-                </ul>
+                
               </li>
 
               <li className="nav-item">
                 <Link href="/contact" passHref>
-                  Contact
+                  CONTACT
                 </Link>
               </li>
             </ul>
@@ -80,7 +69,7 @@ const MainMenu: FC<Props> = () => {
           <div className="right-button">
             <ul>
               <li className="shop-icon">
-                <Link href="#" passHref>
+                <Link href="/recordings" passHref>
                   <i className="ti-shopping-cart-full" />
                   <span>0</span>
                 </Link>

@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Header from '@/components/Header/Header';
 import About from '@/components/About/About';
-import Testimonials from '@/components/Testimonials/Testimonials';
 import Footer from '@/components/Footer/Footer';
 import PageHeader from '@/components/PageHeader/PageHeader';
 
@@ -16,9 +15,6 @@ export default function AboutPage() {
       <Header />
       <PageHeader />
       <About />
-
-      <Testimonials />
-  
       <Footer />
   </>
 }

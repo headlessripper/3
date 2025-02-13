@@ -5,6 +5,7 @@ import '@/styles/sintec.css';
 import '@/styles/responsive.css';
 import '@/styles/TimeTable.css'; // Add this line
 import '@/styles/contactus.css'; // Add this line
+import '@/styles/styles.css'; 
 
 const roboto = Roboto({
   weight: ['400', '700'],
