@@ -11,7 +11,7 @@ const Courses: React.FC = () => {
 
   const gradeUrls: Record<"Grade 10" | "Grade 11" | "Grade 12", string> = {
     "Grade 10": "https://bo-baas-grade10.vercel.app/",
-    "Grade 11": "https://bo-baas.vercel.app/",
+    "Grade 11": "https://bo-baas-grade11.vercel.app/",
     "Grade 12": "https://bo-baas-grade12.vercel.app/",
   };
 
